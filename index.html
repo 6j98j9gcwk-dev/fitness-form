@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <h1>Fitness Tracker</h1>
+            <p class="subtitle">Track your workout progress</p>
+            
+            <form id="fitnessForm" class="fitness-form">
+                <!-- Personal Information Section -->
+                <fieldset class="form-section">
+                    <legend>Personal Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="age">Age *</label>
+                        <input type="number" id="age" name="age" min="1" max="120" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender">
+                                <option value="">Select...</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="weight">Weight (kg) *</label>
+                            <input type="number" id="weight" name="weight" step="0.1" min="1" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="height">Height (cm) *</label>
+                            <input type="number" id="height" name="height" step="0.1" min="1" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="bmi">BMI</label>
+                            <input type="text" id="bmi" name="bmi" disabled>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <!-- Fitness Goals Section -->
+                <fieldset class="form-section">
+                    <legend>Fitness Goals</legend>
+                    
+                    <div class="form-group">
+                        <label for="goal">Primary Goal *</label>
+                        <select id="goal" name="goal" required>
+                            <option value="">Select a goal...</option>
+                            <option value="weight-loss">Weight Loss</option>
+                            <option value="muscle-gain">Muscle Gain</option>
+                            <option value="endurance">Improve Endurance</option>
+                            <option value="flexibility">Increase Flexibility</option>
+                            <option value="general-health">General Health</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="experience">Experience Level *</label>
+                        <select id="experience" name="experience" required>
+                            <option value="">Select...</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                </fieldset>
+                
+                <!-- Activity Preferences Section -->
+                <fieldset class="form-section">
+                    <legend>Activity Preferences</legend>
+                    
+                    <div class="form-group">
+                        <label>Preferred Activities (select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="activities" value="running">
+                                Running
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="activities" value="weightlifting">
+                                Weightlifting
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="activities" value="yoga">
+                                Yoga
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="activities" value="cycling">
+                                Cycling
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="activities" value="swimming">
+                                Swimming
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="activities" value="cardio">
+                                Cardio
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="frequency">Workout Frequency (per week) *</label>
+                        <input type="number" id="frequency" name="frequency" min="1" max="7" required>
+                    </div>
+                </fieldset>
+                
+                <!-- Additional Information Section -->
+                <fieldset class="form-section">
+                    <legend>Additional Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="injuries">Do you have any injuries or health concerns?</label>
+                        <textarea id="injuries" name="injuries" rows="3" placeholder="Describe any injuries or health concerns..."></textarea>
+                    </div>
+                    
+                    <div class="checkbox-label">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        I agree to the terms and conditions *
+                    </div>
+                </fieldset>
+                
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    <button type="reset" class="btn btn-secondary">Clear Form</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+            
+            <!-- Success Message -->
+            <div id="successMessage" class="success-message" style="display: none;">
+                <h2>✓ Form Submitted Successfully!</h2>
+                <p>Your fitness profile has been created. Get ready to start your fitness journey!</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
